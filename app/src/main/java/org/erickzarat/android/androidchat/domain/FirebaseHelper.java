@@ -68,7 +68,7 @@ public class FirebaseHelper {
 
     public Firebase getOneContactReference(String mainEmail, String childEmail){
         String childKey = childEmail.replace(".", "_");
-        return getUserReference(mainEmail).child(CONTACTS_PATH).child(childEmail);
+        return getUserReference(mainEmail).child(CONTACTS_PATH).child(childKey);
     }
 
     public Firebase getChatsReference(String receiver){

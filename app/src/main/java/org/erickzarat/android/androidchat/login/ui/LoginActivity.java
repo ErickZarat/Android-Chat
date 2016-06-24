@@ -13,7 +13,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import org.erickzarat.android.androidchat.R;
-import org.erickzarat.android.androidchat.contactlist.ContactListActivity;
+import org.erickzarat.android.androidchat.contactlist.ui.ContactListActivity;
 import org.erickzarat.android.androidchat.login.LoginPresenter;
 import org.erickzarat.android.androidchat.login.LoginPresenterImpl;
 
