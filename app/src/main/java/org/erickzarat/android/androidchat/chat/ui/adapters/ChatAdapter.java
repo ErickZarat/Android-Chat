@@ -2,6 +2,7 @@ package org.erickzarat.android.androidchat.chat.ui.adapters;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -42,15 +43,16 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder>{
         String msg = chatMessage.getMsg();
         holder.txtMessage.setText(msg);
 
-        int color = fetchColor(R.attr.colorPrimary);
-        int gravity = Gravity.LEFT;
+        int color = fetchColor(R.attr.colorAccent);
+        int gravity = Gravity.RIGHT;
+        Drawable background = context.getResources().getDrawable(R.drawable.accent_round);
 
         if(!chatMessage.isSentByMe()){
-            color = fetchColor(R.attr.colorAccent);
-            gravity = Gravity.RIGHT;
+            color = fetchColor(R.attr.colorPrimary);
+            gravity = Gravity.LEFT;
+            background = context.getResources().getDrawable(R.drawable.primary_round);
         }
-
-        holder.txtMessage.setBackgroundColor(color);
+        holder.txtMessage.setBackground(background);
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) holder.txtMessage.getLayoutParams();
         params.gravity = gravity;
         holder.txtMessage.setLayoutParams(params);

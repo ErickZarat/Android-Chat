@@ -112,7 +112,9 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
 
     @OnClick(R.id.btnSendMessage)
     public void sendMessage() {
-        presenter.sendMessage(editTxtMessage.getText().toString());
+        String msg = editTxtMessage.getText().toString();
+        if(msg.length() > 0)
+            presenter.sendMessage(msg);
         editTxtMessage.setText("");
     }
 

@@ -19,14 +19,14 @@
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
 			android:background="?attr/colorPrimary"
-			app:popupTheme="@style/AppTheme.PopupOverlay">
+			app:popupTheme="@style/AppTheme.PopupOverlay"
+			android:elevation="5dp">
 
 			<include layout="@layout/content_contact" />
 
 		</android.support.v7.widget.Toolbar>
 
 	</android.support.design.widget.AppBarLayout>
-
 
 	<RelativeLayout
 		android:layout_width="match_parent"
@@ -37,32 +37,50 @@
 			android:id="@+id/messageRecyclerView"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
+			android:paddingStart="@dimen/activity_horizontal_margin"
+			android:paddingEnd="@dimen/activity_horizontal_margin"
+			android:paddingBottom="5dp"
 			app:layout_behavior="@string/appbar_scrolling_view_behavior"
-			android:layout_marginLeft="@dimen/activity_horizontal_margin"
-			android:layout_marginRight="@dimen/activity_horizontal_margin"
-			android:layout_marginTop="@dimen/activity_horizontal_margin"
-			android:layout_above="@+id/btnSendMessage" />
+			android:layout_above="@+id/separator"/>
+
+		<View
+			android:id="@+id/separator"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@android:color/darker_gray"
+			android:layout_above="@+id/btnSendMessage"/>
 
 		<EditText
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/editTxtMessage"
-			android:layout_margin="@dimen/activity_horizontal_margin"
+			android:inputType="textCapSentences"
+			android:layout_marginLeft="@dimen/activity_horizontal_margin"
+			android:layout_marginRight="@dimen/activity_horizontal_margin"
+			android:layout_marginBottom="5dp"
+			android:drawablePadding="5dp"
+			android:hint="@string/chat.message.hint"
 			android:layout_alignParentBottom="true"
 			android:layout_alignParentLeft="true"
 			android:layout_toLeftOf="@+id/btnSendMessage"
-			android:layout_toStartOf="@+id/btnSendMessage" />
+			android:layout_toStartOf="@+id/btnSendMessage"
+			android:layout_centerVertical="true"
+			android:drawableLeft="@drawable/ic_message"
+			android:drawableTint="@color/colorAccent"/>
 
 		<ImageButton
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
+			android:layout_width="@dimen/contact_image_size"
+			android:layout_height="@dimen/contact_image_size"
 			android:id="@+id/btnSendMessage"
-			android:layout_margin="@dimen/activity_horizontal_margin"
+			android:layout_marginBottom="5dp"
+			android:layout_marginTop="5dp"
+			android:layout_marginRight="@dimen/activity_horizontal_margin"
+			android:layout_centerVertical="true"
 			android:layout_alignParentBottom="true"
 			android:layout_alignParentRight="true"
-			android:tint="@android:color/black"
-			android:background="@android:color/transparent"
-			android:src="@android:drawable/ic_menu_send"/>
+			android:tint="@android:color/white"
+			android:background="@drawable/accent_round"
+			android:src="@drawable/ic_send"
+			android:elevation="5dp"/>
 	</RelativeLayout>
-
 </android.support.design.widget.CoordinatorLayout>
